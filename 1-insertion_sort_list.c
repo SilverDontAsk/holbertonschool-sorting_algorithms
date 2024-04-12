@@ -29,12 +29,13 @@ else
  */
 void insertion_sort_list(listint_t **list)
 {
+listint_t *current, *insert;
 if (list == NULL || *list == NULL || (*list)->next == NULL)
 return;
-listint_t *current = (*list)->next;
+current = (*list)->next;
 while (current != NULL)
 {
-listint_t *insert = current->prev;
+insert = current->prev;
 while (insert != NULL && current->n < insert->n)
 {
 swap_nodes(list, &insert, current);
